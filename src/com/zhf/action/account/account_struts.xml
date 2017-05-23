@@ -11,6 +11,7 @@
         	<result name="success" type="redirectAction" >
         		<param name="actionName">showAccount</param>
         		<param name="namespace">/</param>
+        		<param name="pageString">${page}</param>
         	</result>
         </action>
 		

@@ -11,7 +11,7 @@
         <script language="javascript" type="text/javascript">
             
             //开通或暂停、删除
-            function setState(id,state) {
+            function setState(id,state,page) {
             	var r=false;
             	if(state=="0"){
             		r = window.confirm("确定要开通此账务账号吗？");
@@ -22,7 +22,7 @@
             	}
               
                 if(r){
-					window.location.href="changeAccountState.action?id="+id+"&state="+state;
+					window.location.href="changeAccountState.action?id="+id+"&state="+state+"&page="+page;
 				}
             }
             
@@ -110,9 +110,9 @@
 		                        <td>${account.CREATE_DATE }</td>
 		                        <td>${account.LAST_LOGIN_TIME}</td>                            
 		                        <td class="td_modi">
-		                            <input type="button" value="暂停" class="btn_pause" onclick="setState(${account.ID},'1');" />
+		                            <input type="button" value="暂停" class="btn_pause" onclick="setState(${account.ID},'1',${page});" />
 		                            <input type="button" value="修改" class="btn_modify" onclick="location.href='account_modi.html';" />
-		                            <input type="button" value="删除" class="btn_delete" onclick="setState(${account.ID},'2');" />
+		                            <input type="button" value="删除" class="btn_delete" onclick="setState(${account.ID},'2',${page});" />
 		                        </td>
 		                    </tr>
                     	</s:if>
@@ -127,9 +127,9 @@
 		                        <td>${account.CREATE_DATE }</td>
 		                        <td>${account.LAST_LOGIN_TIME}</td>                            
 		                        <td class="td_modi">
-		                            <input type="button" value="开通" class="btn_start" onclick="setState(${account.ID},'0');" />
+		                            <input type="button" value="开通" class="btn_start" onclick="setState(${account.ID},'0',${page});" />
 		                            <input type="button" value="修改" class="btn_modify" onclick="location.href='account_modi.html';" />
-		                            <input type="button" value="删除" class="btn_delete" onclick="setState(${account.ID},'2');" />
+		                            <input type="button" value="删除" class="btn_delete" onclick="setState(${account.ID},'2',${page});" />
 		                        </td>
 		                     </tr>
                     	</s:if>

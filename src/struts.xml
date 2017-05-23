@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<include file="com/zhf/action/login/login_struts.xml"></include>
+	<include file="com/zhf/action/fee/fee_struts.xml"></include>
+	<include file="com/zhf/action/account/account_struts.xml"></include>
+</struts>

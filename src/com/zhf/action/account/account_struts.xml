@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="account_struts" extends="json-default" namespace="/" >
+		<action name="showAccount" class="com.zhf.action.account.ShowAccount">
+        	<result name="success" type="dispatcher" >/WEB-INF/account/account_list.jsp</result>
+        </action>
+		<action name="changeAccountState" class="com.zhf.action.account.ChangeAccountState">
+        	<result name="success" type="redirectAction" >
+        		<param name="actionName">showAccount</param>
+        		<param name="namespace">/</param>
+        	</result>
+        </action>
+		
+	</package>
+
+</struts>

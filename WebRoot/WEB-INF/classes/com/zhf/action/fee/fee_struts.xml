@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="fee_struts" extends="json-default" namespace="/" >
+		<action name="showFee"  class="com.zhf.action.fee.ShowFee">
+        	<result name="success" type="dispatcher" >/WEB-INF/fee/fee_list.jsp</result>
+        	<result name="error" type="dispatcher">/WEB-INF/error.jsp</result>
+        </action>
+		<action name="showFeeAdd"  class="com.zhf.action.fee.ShowFeeAdd">
+        	<result name="success" type="dispatcher" >/WEB-INF/fee/fee_add.jsp</result>
+        	<result name="error" type="dispatcher">/WEB-INF/error.jsp</result>
+        </action>
+		<action name="feeAdd"  class="com.zhf.action.fee.FeeAdd">
+        	<result name="success" type="redirectAction" >
+        		<param name="actionName">showFee</param>
+        		<param name="namespace">/</param>
+        	</result>
+        </action>
+		<action name="startFee"  class="com.zhf.action.fee.StartFee">
+        	<result name="success" type="redirectAction" >
+        		<param name="actionName">showFee</param>
+        		<param name="namespace">/</param>
+        	</result>
+        </action>
+		<action name="deleteFee"  class="com.zhf.action.fee.DeleteFee">
+        	<result name="success" type="redirectAction" >
+        		<param name="actionName">showFee</param>
+        		<param name="namespace">/</param>
+        	</result>
+        </action>
+        <action name="showFeeModify" class="com.zhf.action.fee.ShowFeeModify">
+        	<result name="success" type="dispatcher">/WEB-INF/fee/fee_modi.jsp</result>
+        </action>
+        <action name="feeModify" class="com.zhf.action.fee.FeeModify">
+        	<result name="success" type="redirectAction" >
+        		<param name="actionName">showFee</param>
+        		<param name="namespace">/</param>
+        	</result>
+        </action>
+        <action name="feeDetail" class="com.zhf.action.fee.FeeDetail">
+        	<result name="success" type="dispatcher" >/WEB-INF/fee/fee_detail.jsp</result>
+        </action>
+		
+	</package>
+
+</struts>
